@@ -1,4 +1,4 @@
-package io.github.dev2.util;
+package io.github.dev2.util.mongodb;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class ServiceBaseMdbImpl <M extends MongoRepository<T,ID>, T> implements IService<T>
+public class ServiceBaseMdbImpl <M extends MongoRepository<T,ID>, T,ID> implements IService<T>
 {
 
 	private M baseRepository;
@@ -62,7 +62,7 @@ public class ServiceBaseMdbImpl <M extends MongoRepository<T,ID>, T> implements 
 	@Override
 	public boolean removeById(Serializable id)
 	{
-		this.getBaseRepository().deleteById(id);
+		this.getBaseRepository().deleteById((ID)id);
 		return false;
 	}
 
@@ -125,13 +125,13 @@ public class ServiceBaseMdbImpl <M extends MongoRepository<T,ID>, T> implements 
 	@Override
 	public T getById(Serializable id)
 	{
-		return this.getBaseRepository().findById(id).get();
+		return this.getBaseRepository().findById((ID)id).get();
 	}
 
 	@Override
 	public List<T> listByIds(Collection<? extends Serializable> idList)
 	{
-		this.getBaseRepository().findAllById(idList);
+		this.getBaseRepository().findAllById((Collection<ID>)idList);
 		return null;
 	}
 
@@ -284,7 +284,7 @@ public class ServiceBaseMdbImpl <M extends MongoRepository<T,ID>, T> implements 
 	@Override
 	public boolean saveOrUpdate(T entity, Wrapper<T> updateWrapper)
 	{
-		this.getBaseRepository().
+		this.getBaseRepository().save(entity,)
 		return false;
 	}
 }
