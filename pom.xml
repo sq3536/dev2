@@ -19,7 +19,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <alibaba-druid.version>1.1.21</alibaba-druid.version>
-        <alibaba-fastjson.version>1.2.62</alibaba-fastjson.version>
+        <alibaba-fastjson.version>1.2.83</alibaba-fastjson.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <logstash-logback-encoder.version>6.3</logstash-logback-encoder.version>
