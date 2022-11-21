@@ -32,7 +32,7 @@
         <caffeine-cache>2.6.0</caffeine-cache>
         <kryo-version>4.0.2</kryo-version>
         <h2-version>1.4.200</h2-version>
-        <xxl-job>2.1.0</xxl-job>
+        <xxl-job>2.3.1</xxl-job>
     </properties>
     <dependencyManagement>
         <dependencies>
